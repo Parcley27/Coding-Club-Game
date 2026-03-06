@@ -6,3 +6,5 @@ Contributors:
 - Jayden
 - Pierce
 - Jason
+- Guy
+- Coding Club Member
