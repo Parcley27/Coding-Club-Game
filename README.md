@@ -6,3 +6,8 @@ Contributors:
 - Jayden
 - Pierce
 - Kimi
+- Sharon
+- Jason
+- Guy
+- Coding Club Member
+- Neal Deng the Goat
