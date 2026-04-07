@@ -18,6 +18,9 @@ public class PlayerMovementController : MonoBehaviour
         actions.Player.Enable();
         actions.Player.Move.performed += Movement;
         actions.Player.Jump.performed += Jump;
+
+        actions.Player.Move.canceled += Movement;
+        actions.Player.Jump.canceled += Jump;
     }
     void OnDisable()
     {
