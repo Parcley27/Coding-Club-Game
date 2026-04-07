@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 public class PlayerMovementController : MonoBehaviour
 {
     public InputSystem_Actions actions;
-    public float PlayerSpeed;
-    public float JumpForce;
+    public float PlayerSpeed; //sets player speed multiplier
+    public float JumpForce; //determines how high jump is
     float movementX;
     Rigidbody2D rb;
     void Awake()
