@@ -5,10 +5,14 @@ using UnityEngine.InputSystem;
 public class PlayerMovementController : MonoBehaviour
 {
     public InputSystem_Actions actions;
-    public float PlayerSpeed; //sets player speed multiplier
-    public float JumpForce; //determines how high jump is
+    public float playerSpeed; //sets player speed multiplier
+    public float jumpForce; //determines how high jump is
     float movementX;
     Rigidbody2D rb;
+    public Transform groundedChecker;
+    public float groundCheckerRadius;
+    public LayerMask groundLayer;
+    bool isGrounded;
     void Awake()
     {
         actions = new InputSystem_Actions();
@@ -34,9 +38,9 @@ public class PlayerMovementController : MonoBehaviour
     }
     void Jump(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && isGrounded)
         {
-            rb.linearVelocityY = JumpForce;
+            rb.linearVelocityY = jumpForce;
         }
     }
     void Start()
@@ -47,6 +51,12 @@ public class PlayerMovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.linearVelocityX = movementX * PlayerSpeed;
+        isGrounded = Physics2D.OverlapCircle(groundedChecker.position, groundCheckerRadius, groundLayer);
+        rb.linearVelocityX = movementX * playerSpeed;
+    }
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.aliceBlue;
+        Gizmos.DrawWireSphere(groundedChecker.position, groundCheckerRadius);
     }
 }

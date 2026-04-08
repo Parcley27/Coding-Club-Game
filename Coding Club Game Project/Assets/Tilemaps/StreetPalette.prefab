@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 506120800414956475}
   - component: {fileID: 4569598711810912954}
   m_Layer: 0
-  m_Name: MainPalette
+  m_Name: StreetPalette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
