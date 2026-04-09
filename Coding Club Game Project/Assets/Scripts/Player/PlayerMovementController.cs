@@ -54,7 +54,7 @@ public class PlayerMovementController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundedChecker.position, groundCheckerRadius, groundLayer);
         rb.linearVelocityX = movementX * playerSpeed;
     }
-    void OnDrawGizmosSelected()
+    void OnDrawGizmosSelected() // This draws the radius of the ground checker in the Unity Scene and is not relevant for gameplay
     {
         Gizmos.color = Color.aliceBlue;
         Gizmos.DrawWireSphere(groundedChecker.position, groundCheckerRadius);
